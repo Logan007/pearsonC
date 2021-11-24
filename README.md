@@ -1,10 +1,10 @@
-### Pearson CRC32c Hashing
+# Pearson CRC32c Hashing
 
 As [discussed](https://github.com/skeeto/hash-prospector/pull/13#issuecomment-977186194) over at Skeeto's [Hash Prospector](https://github.com/skeeto/hash-prospector), a CRC32c-MUL-CRC32c scheme seemingly forms a low-bias permutation on 32-bit values. Embedding it into a Pearson scheme as used with [Pearson B. Hashing](https://github.com/Logan007/pearsonB), we get a new hashing function. Following the naming series, let's call it **Pearson C. Hashing**.
 
 Hope is that the CRC32c instruction as found at Intel comptaible CPU's starting with SSE 4.2 support will accelerate hashing a lot.
 
-### Permutation
+## Permutation
 
 We use an all-same constant version as it has a comparable bias to an all-different constant version. This way, we might save some cycles loading constants from cahce or memory. 
 
