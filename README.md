@@ -19,7 +19,7 @@ uint32_t cmc (uint32_t x) {
 }
 ```
 
-This scheme passes SmallCrunch (15/15) and masters Crunch (140/144):
+This scheme passes SmallCrunch (15/15), masters Crunch (140/144) and does well on BigCrush (141/160).
 
 ```
 ========= Summary results of SmallCrush =========
@@ -53,6 +53,42 @@ This scheme passes SmallCrunch (15/15) and masters Crunch (140/144):
  All other tests were passed
 ```
 
+```
+========= Summary results of BigCrush =========
+
+ Version:          TestU01 1.2.3
+ Generator:        CRC32-MUL-CRC32
+ Number of statistics:  160
+ Total CPU time:   02:27:12.07
+ The following tests gave p-values outside [0.001, 0.9990]:
+ (eps  means a value < 1.0e-300):
+ (eps1 means a value < 1.0e-15):
+
+       Test                          p-value
+ ----------------------------------------------
+ 30  CouponCollector, r = 0         4.0e-11
+ 31  CouponCollector, r = 10         1.1e-6
+ 32  CouponCollector, r = 20        7.8e-10
+ 33  CouponCollector, r = 27        1.4e-13
+ 34  Gap, r = 0                       eps  
+ 35  Gap, r = 25                      eps  
+ 36  Gap, r = 0                       eps  
+ 37  Gap, r = 20                      eps  
+ 41  Permutation, t = 5               eps  
+ 43  Permutation, t = 10              eps  
+ 46  MaxOft, t = 8                  1 - eps1
+ 47  MaxOft, t = 16                 1 - eps1
+ 48  MaxOft, t = 24                 1 - eps1
+ 49  MaxOft, t = 32                 1 - eps1
+ 58  AppearanceSpacings, r = 27      5.6e-7
+ 65  SumCollector                     eps  
+ 89  PeriodsInStrings, r = 20        0.9995 
+ 101  Run of bits, r = 0              2.7e-6
+ 102  Run of bits, r = 27             8.0e-4
+ ----------------------------------------------
+ All other tests were passed
+```
+
 ### Further Steps
 
-A few tests are still missing such as BigCrunch as well as the comprehensive evaluation of SMHasher – to follow soon. Same for the full C implementation.
+A few tests are still missing such as the comprehensive evaluation of SMHasher – to follow soon. Same for the full C implementation.
