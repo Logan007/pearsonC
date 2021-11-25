@@ -6,7 +6,7 @@ Hope is that the CRC32c instruction as found at Intel comptaible CPU's starting 
 
 ## Permutation
 
-We use an all-same constant version as it has a comparable bias to an all-different constant version. This way, we might save some cycles loading constants from cahce or memory. 
+We use an all-same constant version as it has a comparable bias to an all-different constant version. This way, we might save some cycles loading constants from cache or memory. 
 
 ```
 uint32_t cmc (uint32_t x) {
@@ -19,7 +19,7 @@ uint32_t cmc (uint32_t x) {
 }
 ```
 
-This scheme passes SmallCrunch (15/15), masters Crunch (140/144) and does well on BigCrush (141/160).
+This permutation passes SmallCrunch (15/15), masters Crunch (140/144) and does well on BigCrush (141/160).
 
 ```
 ========= Summary results of SmallCrush =========
@@ -89,6 +89,6 @@ This scheme passes SmallCrunch (15/15), masters Crunch (140/144) and does well o
  All other tests were passed
 ```
 
-### Further Steps
+## Further Steps
 
-A few tests are still missing such as the comprehensive evaluation of SMHasher – to follow soon. Same for the full C implementation.
+A few tests are still missing such as the comprehensive evaluation of the whole scheme (not just the permutation) by SMHasher – to follow soon. Same for the full C implementation.
